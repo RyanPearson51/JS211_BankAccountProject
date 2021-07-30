@@ -10,9 +10,6 @@ class BankAccount {
     }
 
     balance(){
-        //let currentBalance = this.transactions.map(x => x.amount);
-        //return currentBalance.reduce((total, currentValue) => total+currentValue);
-
         let sum = 0;
         for(let i=0; i<this.transactions.length; i++){
             sum += this.transactions[i].amount
@@ -65,18 +62,18 @@ accountTwo.deposit(200);
 accountTwo.deposit(4.50);
 
 
-console.log('account one balance:', accountOne.balance())
-console.log('account two balance:', accountTwo.balance());
+console.log('account one balance:', accountOne.balance()) //600
+console.log('account two balance:', accountTwo.balance()); //204.50
 accountOne.charge('store', 10);
 accountTwo.charge('bills', 100);
 accountTwo.charge('movies', 20)
-console.log('account one balance:', accountOne.balance());
-console.log('account two balance:', accountTwo.balance());
+console.log('account one balance:', accountOne.balance()); //590
+console.log('account two balance:', accountTwo.balance()); //84.50
 accountTwo.charge('hospital', 500);
-console.log('account two balance:', accountTwo.balance());
+console.log('account two balance:', accountTwo.balance()); //84.50, account value too low message
 
-console.log(accountOne.owner);
-console.log(accountOne.accountNumber);
+console.log(accountOne.owner); //ryan
+console.log(accountOne.accountNumber); //a1234
 console.log(accountOne);
 console.log(accountTwo);
 
