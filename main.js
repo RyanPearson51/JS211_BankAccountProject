@@ -10,8 +10,14 @@ class BankAccount {
     }
 
     balance(){
-        let currentBalance = this.transactions.map(x => x.amount);
-        return currentBalance.reduce((total, currentValue) => total+currentValue);
+        //let currentBalance = this.transactions.map(x => x.amount);
+        //return currentBalance.reduce((total, currentValue) => total+currentValue);
+
+        let sum = 0;
+        for(let i=0; i<this.transactions.length; i++){
+            sum += this.transactions[i].amount
+        }
+        return sum
     }
 
     deposit(amt){
@@ -73,6 +79,10 @@ console.log(accountOne.owner);
 console.log(accountOne.accountNumber);
 console.log(accountOne);
 console.log(accountTwo);
+
+
+
+
 
 
 
